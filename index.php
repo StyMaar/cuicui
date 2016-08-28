@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html>
-	<head>
-    	<title>Deux roues pour demain microblog</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="format-detection" content="telephone=no" />
-		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    	<link type="text/css" rel="stylesheet" href="style.css" />
-	</head>
-	<body>
+
 
 		<?php
 
+		include("head.php");		
 		$POSTS_PER_PAGE = 1;
 
 		if (array_key_exists ("page", $_GET)){
@@ -77,11 +69,5 @@
 
 		echo "</section>";
 		print_nav($current_page, $POSTS_PER_PAGE, $length);
-		?>
-
-		<footer>
-			Deux roues pour demain, un projet par Pia et Kevin.<br />			
-			Website handcrafted by StyMaar.
-		<footer>
-	</body>
-</html>
+		include("footer.php");		
+?>
