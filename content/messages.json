@@ -3,12 +3,12 @@
 "messages" : {
 	"1":{
 		"content":"Yolo bob\nHello !",
-		"date":"4568902"
+		"date":4568902
 	},
 	"3":{
 		"content":"Breizh atao !",
 		"image": "bzg.jpg",
-		"date":"567"
+		"date":567
 	}
 }
 }

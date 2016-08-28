@@ -67,7 +67,7 @@
 				echo "</p>";
 			
 				echo "<p class='date'>";
-				echo $message['date'];
+				echo date(DATE_RFC2822, $message['date']);
 				echo "</p>";
 				echo "</article>";
 			}
