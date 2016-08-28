@@ -1,0 +1,14 @@
+{
+"lastId" : "3",
+"messages" : {
+	"1":{
+		"content":"Yolo bob\nHello !",
+		"date":"2016-08-28-23:51"
+	},
+	"3":{
+		"content":"Breizh atao !",
+		"image": "bzg.jpg",
+		"date":"2016-08-28-23:51"
+	}
+}
+}
