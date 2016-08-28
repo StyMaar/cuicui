@@ -60,7 +60,7 @@
 				if (array_key_exists ("image", $message)){
 					$url = $message['image'];
 				
-					echo "<img src='images/$url' alt='$id' />";
+					echo "<img src='images/$url' alt='Image manquante' />";
 				}	
 				echo "<p>";
 				echo $message['content'];
