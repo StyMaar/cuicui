@@ -3,7 +3,7 @@
 		<?php
 
 		include("head.php");		
-		$POSTS_PER_PAGE = 1;
+		$POSTS_PER_PAGE = 20;
 
 		if (array_key_exists ("page", $_GET)){
 			$current_page = $_GET['page'];	
