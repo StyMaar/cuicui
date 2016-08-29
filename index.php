@@ -50,7 +50,7 @@ foreach ($messages as $id => $message) {
 		echo "<article>";
 		if (array_key_exists ("image", $message)){
 			$url = $message['image'];
-			echo "<img src='images/$url' alt='Image manquante' />";
+			echo "<img src='$url' alt='Image manquante' />";
 		}
 		echo "<p>";
 		echo $message['content'];
