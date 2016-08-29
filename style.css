@@ -26,6 +26,18 @@ line-height:1.2;
 }
 
 footer{
+  margin-top:50px;
   font-size: 12px;
   text-align: center
+}
+
+
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input {
+  display: block;
+  width: 100%;
 }
