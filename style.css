@@ -1,0 +1,31 @@
+body{
+margin:40px auto;
+max-width:650px;
+line-height:1.6em;
+font-size:18px;
+color:#444;
+padding:0 10px;
+}
+
+.date {
+  font-size: 12px
+}
+
+article {
+  margin-bottom: 30px
+}
+
+article img {
+  display: block;
+  max-width:100%;
+  margin:auto;
+}
+
+h1,h2,h3{
+line-height:1.2;
+}
+
+footer{
+  font-size: 12px;
+  text-align: center
+}
