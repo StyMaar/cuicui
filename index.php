@@ -14,11 +14,13 @@ $messages = json_decode($string, true);
 
 $i = 0;
 
-function cmp($a, $b) {
-	if ($a['date'] == $b['date']) {
+function cmp($a, $b){
+	$date_a = $a['date'];
+	$date_b = $b['date'];
+	if ($date_a == $date_b) {
 		return 0;
 	}
-	return ($a < $b) ? -1 : 1;
+	return ($date_a > $date_b) ? -1 : 1;
 }
 
 
