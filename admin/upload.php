@@ -30,7 +30,8 @@ $fh = fopen('../content/messages.json', 'w');
 fwrite($fh, json_encode($messages));
 fclose($fh);
 
-echo "ça a marché !";
+
+header("Location: /microblog/", true, 307);
 ?>
 <?php
 include("../footer.php");
