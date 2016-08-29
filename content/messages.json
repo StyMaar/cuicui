@@ -1,6 +1,4 @@
 {
-"lastId" : "3",
-"messages" : {
 	"1":{
 		"content":"Yolo bob\nHello !",
 		"date":4568902
@@ -10,5 +8,4 @@
 		"image": "bzg.jpg",
 		"date":567
 	}
-}
 }

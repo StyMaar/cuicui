@@ -10,9 +10,8 @@ if (array_key_exists ("page", $_GET)){
 }
 
 $string = file_get_contents("content/messages.json");
-$json_a = json_decode($string, true);
+$messages = json_decode($string, true);
 
-$messages = $json_a['messages'];
 $i = 0;
 
 function cmp($a, $b) {
