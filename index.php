@@ -57,7 +57,8 @@ foreach ($messages as $id => $message) {
 		echo "</p>";
 
 		echo "<p class='date'>";
-		echo date(DATE_RFC2822, $message['date']);
+		$date = date(DATE_RFC2822, $message['date']);
+		echo "<a href='article.php?id=$id'>$date</a>";
 		echo "</p>";
 		echo "</article>";
 	}
