@@ -18,12 +18,10 @@ if($message) {
 	  $content = $message['content'];
 	  echo "<textarea name='message' rows='8'>$content</textarea>";
 		echo "<input type='hidden' value='$id' name='id' />";
-	  echo "<input type='submit' value=\"Éditer l'article\" />";
-	  echo "</form>";
-
-		echo "<p class='date'>";
-		echo date(DATE_RFC2822, $message['date']);
-		echo "</p>";
+		$date = date(DATE_RFC2822, $message['date']);
+		echo "<input type='text' name='date' value='$date' />";
+		echo "<input type='submit' value=\"Éditer l'article\" />";
+		echo "</form>";
 		echo "</article>";
 
 } else {
