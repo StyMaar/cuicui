@@ -13,11 +13,13 @@ $messages = json_decode($string, true);
 
 $id = uniqid();
 $content = $_POST['message'];
-$date = time();
+$date = $_POST['date'];
+$timestamp = strtotime($date);
+
 
 $messages[$id]= [
 	"content" => $content,
-	"date" => $date,
+	"date" => $timestamp,
 ];
 
 if (isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
