@@ -3,7 +3,7 @@
 include("../head.php");
 ?>
 
-<?php 
+<?php
 unlink('../content/messages.json.bckp');
 
 copy('../content/messages.json', '../content/messages.json.bckp'); //create a backup of the storage file
