@@ -41,3 +41,7 @@ input {
   display: block;
   width: 100%;
 }
+
+img {
+    image-orientation: from-image;
+}
