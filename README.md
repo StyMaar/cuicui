@@ -12,18 +12,18 @@ Cuicui is a tiny micro-blog engine.
 ## What's in this repo
 
 The main index.php => the list of messages posted, with pagination (with GET param)
-admin/index.php => the create/edit page (with optional GET param)
-admin/upload.php => the update script (with file and post param)
-admin/delete.php => the delete script (with GET param)
-admin/edit.php => the «edit» page (with GET param)
-admin/do_edit.php => the edit script (with POST param)
+cc-admin/index.php => the create/edit page (with optional GET param)
+cc-admin/upload.php => the update script (with file and post param)
+cc-admin/delete.php => the delete script (with GET param)
+cc-admin/edit.php => the «edit» page (with GET param)
+cc-admin/do_edit.php => the edit script (with POST param)
 article.php => display a single message and the related comments (with GET param)
 
 ## Authentication
 
 There is no custom credential mechanism for Cuicui, it's supposed to use the default authentication mecanism of the web server you're using.
 
-For Apache, it uses a pair of `.htaccess` and `.htpasswd` files that you need to add to the `admin/` directory :
+For Apache, it uses a pair of `.htaccess` and `.htpasswd` files that you need to add to the `cc-admin/` directory :
 
 .htaccess
 ```
@@ -38,14 +38,14 @@ Require valid-user
 USERNAME:PASSWORD_HASH
 ```
 
-To find `ABSOLUTE_PATH_TO_YOUR_.HTPASSWD_FILE_ON_THE_SERVER` on the server you're installing Cuicui, and to calculate the `PASSWORD_HASH`, there is a small helper in `admin/tool.php`.
+To find `ABSOLUTE_PATH_TO_YOUR_.HTPASSWD_FILE_ON_THE_SERVER` on the server you're installing Cuicui, and to calculate the `PASSWORD_HASH`, there is a small helper in `cc-admin/tool.php`.
 
 
 ## Installation (on Apache)
 
 1. Clone this repository.
-2. Edit `admin/tool.php` with your password.
+2. Edit `cc-admin/tool.php` with your password.
 3. Upload the repo on your server
-4. Go to `yourdomain.tld/admin/tool.php`, you'll find the path and password hash.
+4. Go to `yourdomain.tld/cc-admin/tool.php`, you'll find the path and password hash.
 5. create a `.htaccess` and a `.htpasswd` with the path and hash you just found
-6. upload them to your website, and remove `admin/tool.php` from the server.
+6. upload them to your website, and remove `cc-admin/tool.php` from the server.
