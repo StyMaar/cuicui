@@ -15,7 +15,7 @@ article {
   margin-bottom: 30px
 }
 
-article img {
+article img, article video {
   display: block;
   max-width:100%;
   margin:auto;
