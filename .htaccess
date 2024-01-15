@@ -4,3 +4,5 @@ AuthName "welcome !"
 AuthType Basic
 AuthUserFile "/home/stymaar/www/fanclub/.htpasswd"
 Require valid-user
+
+RewriteRule "^miscs/(.*)$" "miscs.php?file=$1"
