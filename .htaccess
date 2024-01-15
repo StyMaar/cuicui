@@ -1,0 +1,6 @@
+DirectoryIndex index.php
+
+AuthName "welcome !"
+AuthType Basic
+AuthUserFile "/home/stymaar/www/fanclub/.htpasswd"
+Require valid-user
