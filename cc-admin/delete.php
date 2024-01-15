@@ -13,7 +13,7 @@ if($messages[$id]) {
 	$fh = fopen('../content/messages.json', 'w');
 	fwrite($fh, json_encode($messages));
 	fclose($fh);
-	header("Location: /microblog/", true, 307);
+	header("Location: /fanclub/", true, 307);
 } else {
 	echo "failed to remove an item that doesn't exist. id = $id";
 }

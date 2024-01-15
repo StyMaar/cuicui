@@ -22,7 +22,7 @@ if($message) {
     fwrite($fh, json_encode($messages));
     fclose($fh);
 
-    header("Location: /microblog/", true, 307);
+    header("Location: /fanclub/", true, 307);
   } else {
     include("../head.php");
     echo "The date string <b> $date </b> is impossible to parse.";
