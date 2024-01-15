@@ -73,6 +73,25 @@ foreach ($messages as $id => $message) {
 				echo "<img src='$url' alt='Image manquante' />";
 			}
 		}
+		if (array_key_exists ("videos", $message)){
+			foreach ($message['videos'] as $url) {
+				echo "<video controls>";
+				echo "<source src='$url' type='video/mp4' />";
+				echo "<p>";
+				echo "	Votre navigateur ne prend pas en charge les vidéos HTML5. Voici";
+				echo "	<a href='$url'>un lien pour télécharger la vidéo</a>.";
+				echo "</p>";
+				echo "</video>";
+			}
+		}
+		if (array_key_exists ("misc", $message)){
+			echo "<h3>Fichiers</h3>";
+			echo "<ul>";
+			foreach ($message['misc'] as $url) {
+				echo "<li><a href='$url'>$url</a></li>";
+			}
+			echo "</ul>";
+		}
 		echo "<p>";
 		echo $message['content'];
 		echo "</p>";

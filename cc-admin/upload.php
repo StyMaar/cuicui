@@ -27,13 +27,28 @@ if (isset($_FILES['mesfichiers']))
 	$fichiers = $_FILES['mesfichiers'];
 	$total = count($fichiers['name']);
 	$images = [];
+	$videos = [];
+	$misc = []; // pour les fichiers qui ne sont ni des images, ni des vidéos.
+
 	for( $i=0 ; $i < $total ; $i++ ) {
-		$path = "images/$id-$i.jpg";
 		$file = $fichiers['tmp_name'][$i];
+		$type = $fichiers['type'][$i];
+		preg_match('((\w+)/(.+))', $type, $matches, PREG_OFFSET_CAPTURE);
+		$extension = $matches[2][0];
+		$path = "images/$id-$i.$extension";
 		move_uploaded_file($file, "../$path");
-		$images[] = $path;
+
+		if($extension == "jpeg" || $extension == "png"){
+			$images[] = $path;
+		}else if ($extension == "mp4"){
+			$videos[] = $path;
+		}else{
+			$misc[] = $path;
+		}
 	}
 	$messages[$id]['images'] = $images;
+	$messages[$id]['videos'] = $videos;
+	$messages[$id]['misc'] = $misc;
 }
 
 

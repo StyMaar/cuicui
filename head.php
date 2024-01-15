@@ -14,13 +14,34 @@
 			if (!previewDiv) {
 				return;
 			}
+			previewDiv.replaceChildren(); // On supprime ce qui avait été précédement ajouté, puisque c'est comme ça que fonctionne le <input type='file'> lui-même.
 			for(let file of document.querySelector('input[type=file]').files){
+				let type = file.type;
 				var reader  = new FileReader();
 				reader.onload = function (event) {
-					let preview = document.createElement("img");
-					preview.src = event.target.result;
-					preview.height = 200;
-					previewDiv.appendChild(preview);
+
+					if(type == "image/jpeg" || type == "image/png"){
+						let preview = document.createElement("img");
+						preview.src = event.target.result;
+						preview.height = 200;
+						previewDiv.appendChild(preview);
+					}else if (type == "video/mp4"){
+						let preview = document.createElement("video");
+						preview.controls = true;
+						preview.height = 200;
+						let source = document.createElement("source");
+						source.src=event.target.result;
+						source.type = 'video/mp4';
+						preview.appendChild(source);
+						previewDiv.appendChild(preview);
+					}else{
+						let preview = document.createElement("img");
+						preview.src = "icons8-file-200.png";
+						preview.height = 200;
+						preview.style.border = "2px black solid";
+						previewDiv.appendChild(preview);
+					}
+
 				}
 				reader.readAsDataURL(file);
 			}
