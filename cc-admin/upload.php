@@ -37,6 +37,11 @@ if (isset($_FILES['mesfichiers']))
 
 		preg_match('((\w+)/(.+))', $type, $matches, PREG_OFFSET_CAPTURE);
 		$extension = $matches[2][0];
+
+		if ($extension == "html"){
+			$extension = "x-html";
+		}
+
 		$path = "images/$id-$i.$extension";
 		move_uploaded_file($file, "../$path");
 
