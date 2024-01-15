@@ -58,9 +58,16 @@ if (isset($_FILES['mesfichiers']))
 			$misc[] = array("url" => $path, "name"=> $name);
 		}
 	}
-	$messages[$id]['images'] = $images;
-	$messages[$id]['videos'] = $videos;
-	$messages[$id]['misc'] = $misc;
+	if (count($images) !== 0) {
+		$messages[$id]['images'] = $images;
+	}
+	
+	if (count($videos) !== 0) {
+		$messages[$id]['videos'] = $videos;
+	}
+	if (count($misc) !== 0) {
+		$messages[$id]['misc'] = $misc;
+	}
 }
 
 
