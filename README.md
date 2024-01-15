@@ -2,6 +2,21 @@
 
 Cuicui is a tiny micro-blog engine.
 
+## Fanclub
+
+ `Fanclub`` est un fork de cuicui, que j'utilise pour partager des photos avec la familles.
+
+Ce qui change:
+
+- Les urls s'attendent maintenant à ce que le truc soit déployé dans `/fanclub` sur le site internet (Il faudrait que ce soit paramétré par un config globale dans cuicui déjà en fait …)
+
+- Tout est planqué derrière le .htaccess, la partie admin n'a plus rien de spéciale. D'ailleurs on peut y accéder depuis les pages normales: l'upload se fait depuis la page d'accueil, et l'édition et suppression depuis la page spécifique d'un post. (Du coup, le .htpasswd doit lui aussi être à la racine)
+
+- En plus des photos jpeg supportées par cuicui, cette version supporte l'upload de vidéos .mp4 et .mov (avec du mp4 dedans), de photos en png, et tout autres type fichiers qui sont alors traités comme des blobs téléchargeables, mais pas visionables sur le site.
+
+- Le formulaire d'upload est plus avancé: on peut uploader plusieurs fichiers à la fois. De plus il supporte les thumbnails d'images et de vidéo, ainsi qu'une icone de fichiers pour les autres types.
+
+
 ## Features
 
 - post messages
