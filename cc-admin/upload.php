@@ -50,7 +50,8 @@ if (isset($_FILES['mesfichiers']))
 			$path = "images/$path";
 			move_uploaded_file($file, "../$path");
 			$images[] = array("url" => $path, "name"=> $name);
-		}else if ($extension == "mp4"){
+		}else if ($extension == "mp4" || $extension == "quicktime"){
+			$path = "$id-$i.mp4";
 			$path = "videos/$path";
 			move_uploaded_file($file, "../$path");
 			$videos[] = array("url" => $path, "name"=> $name);

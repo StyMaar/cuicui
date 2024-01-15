@@ -25,7 +25,7 @@
 						preview.src = event.target.result;
 						preview.height = 200;
 						previewDiv.appendChild(preview);
-					}else if (type == "video/mp4"){
+					}else if (type == "video/mp4" || type == "video/quicktime"){
 						let preview = document.createElement("video");
 						preview.controls = true;
 						preview.height = 200;
@@ -41,9 +41,16 @@
 						preview.style.border = "2px black solid";
 						previewDiv.appendChild(preview);
 					}
-
 				}
-				reader.readAsDataURL(file);
+
+				if (type == "video/quicktime"){
+					let overwrittenFile = new File([file], "filename.mov", {
+						type: "video/mp4"
+					});
+					reader.readAsDataURL(overwrittenFile);
+				}else{
+					reader.readAsDataURL(file);
+				}
 			}
 		}
 	</script>
