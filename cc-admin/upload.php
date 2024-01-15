@@ -30,6 +30,8 @@ if (isset($_FILES['mesfichiers']))
 	$videos = [];
 	$misc = []; // pour les fichiers qui ne sont ni des images, ni des vidéos.
 
+    // echo '<pre>'; print_r($_FILES['mesfichiers']); echo '</pre>';
+
 	for( $i=0 ; $i < $total ; $i++ ) {
 		$file = $fichiers['tmp_name'][$i];
 		$type = $fichiers['type'][$i];
