@@ -33,17 +33,19 @@ if (isset($_FILES['mesfichiers']))
 	for( $i=0 ; $i < $total ; $i++ ) {
 		$file = $fichiers['tmp_name'][$i];
 		$type = $fichiers['type'][$i];
+		$name = $fichiers['name'][$i];
+
 		preg_match('((\w+)/(.+))', $type, $matches, PREG_OFFSET_CAPTURE);
 		$extension = $matches[2][0];
 		$path = "images/$id-$i.$extension";
 		move_uploaded_file($file, "../$path");
 
 		if($extension == "jpeg" || $extension == "png"){
-			$images[] = $path;
+			$images[] = array("url" => $path, "name"=> $name);
 		}else if ($extension == "mp4"){
-			$videos[] = $path;
+			$videos[] = array("url" => $path, "name"=> $name);
 		}else{
-			$misc[] = $path;
+			$misc[] = array("url" => $path, "name"=> $name);
 		}
 	}
 	$messages[$id]['images'] = $images;

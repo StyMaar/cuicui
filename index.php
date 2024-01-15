@@ -69,12 +69,15 @@ foreach ($messages as $id => $message) {
 	if($i >= $current_page*$POSTS_PER_PAGE && $i < ($current_page+1)*$POSTS_PER_PAGE){
 		echo "<article>";
 		if (array_key_exists ("images", $message)){
-			foreach ($message['images'] as $url) {
-				echo "<img src='$url' alt='Image manquante' />";
+			foreach ($message['images'] as $image) {
+				$url = $image["url"];
+				$name = $image["name"];
+				echo "<img src='$url' alt='Image manquante' title='$name'/>";
 			}
 		}
 		if (array_key_exists ("videos", $message)){
-			foreach ($message['videos'] as $url) {
+			foreach ($message['videos'] as $video) {
+				$url = $video["url"];
 				echo "<video controls>";
 				echo "<source src='$url' type='video/mp4' />";
 				echo "<p>";
@@ -87,8 +90,10 @@ foreach ($messages as $id => $message) {
 		if (array_key_exists ("misc", $message)){
 			echo "<h3>Fichiers</h3>";
 			echo "<ul>";
-			foreach ($message['misc'] as $url) {
-				echo "<li><a href='$url'>$url</a></li>";
+			foreach ($message['misc'] as $fichier) {
+				$url = $fichier["url"];
+				$name = $fichier["name"];
+				echo "<li><a href='$url'>$name</a></li>";
 			}
 			echo "</ul>";
 		}
