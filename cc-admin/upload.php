@@ -33,7 +33,7 @@ fwrite($fh, json_encode($messages));
 fclose($fh);
 
 
-header("Location: /microblog/", true, 307);
+header("Location: /fanclub/", true, 307);
 ?>
 <?php
 include("../footer.php");

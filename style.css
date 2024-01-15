@@ -45,3 +45,11 @@ input {
 img {
     image-orientation: from-image;
 }
+
+form {
+  background-color:#e4e4f4;
+}
+
+form > * {
+  display: inline-block;
+}

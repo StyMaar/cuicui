@@ -1,7 +1,7 @@
 
 
 		<footer>
-			Go to footer.php to change the footer !
+			StyMaar 2024
 		<footer>
 	</body>
 </html>

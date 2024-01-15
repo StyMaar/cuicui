@@ -1,6 +1,26 @@
 <?php
 
 include("head.php");
+$date = date(DATE_RFC2822, time());
+?>
+<h2>
+	Envoyer une photo
+</h2>
+<form method="post" action="cc-admin/upload.php" enctype="multipart/form-data">
+	<img src="" height="200" alt="Image preview..." id="preview" style="display:none">
+	<input type="file" name="monfichier" onchange="previewFile()" />
+	<textarea name="message" placeholder="(optionel) tapez votre message ici"></textarea>
+	<?php
+		echo "<input type='hidden' name='date' value='$date' />";
+	?>
+	<input type="submit" value="Envoyer le fichier" />
+</form>
+
+<h2>
+	Photos précédentes
+</h2>
+<?php
+
 $POSTS_PER_PAGE = 20;
 
 if (array_key_exists ("page", $_GET)){
