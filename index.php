@@ -7,8 +7,8 @@ $date = date(DATE_RFC2822, time());
 	Envoyer une photo
 </h2>
 <form method="post" action="cc-admin/upload.php" enctype="multipart/form-data">
-	<img src="" height="200" alt="Image preview..." id="preview" style="display:none">
-	<input type="file" name="monfichier" onchange="previewFile()" />
+	<div id="image-preview"></div>
+	<input type="file" name="mesfichiers[]" onchange="previewFiles()" multiple/>
 	<textarea name="message" placeholder="(optionel) tapez votre message ici"></textarea>
 	<?php
 		echo "<input type='hidden' name='date' value='$date' />";
@@ -68,9 +68,10 @@ echo "<section>";
 foreach ($messages as $id => $message) {
 	if($i >= $current_page*$POSTS_PER_PAGE && $i < ($current_page+1)*$POSTS_PER_PAGE){
 		echo "<article>";
-		if (array_key_exists ("image", $message)){
-			$url = $message['image'];
-			echo "<img src='$url' alt='Image manquante' />";
+		if (array_key_exists ("images", $message)){
+			foreach ($message['images'] as $url) {
+				echo "<img src='$url' alt='Image manquante' />";
+			}
 		}
 		echo "<p>";
 		echo $message['content'];

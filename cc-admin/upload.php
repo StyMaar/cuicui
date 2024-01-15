@@ -22,11 +22,20 @@ $messages[$id]= [
 	"date" => $timestamp,
 ];
 
-if (isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
+if (isset($_FILES['mesfichiers']))
 {
-	move_uploaded_file($_FILES['monfichier']['tmp_name'], "../images/$id.jpg");
-	$messages[$id]['image'] = "images/$id.jpg";
+	$fichiers = $_FILES['mesfichiers'];
+	$total = count($fichiers['name']);
+	$images = [];
+	for( $i=0 ; $i < $total ; $i++ ) {
+		$path = "images/$id-$i.jpg";
+		$file = $fichiers['tmp_name'][$i];
+		move_uploaded_file($file, "../$path");
+		$images[] = $path;
+	}
+	$messages[$id]['images'] = $images;
 }
+
 
 $fh = fopen('../content/messages.json', 'w');
 fwrite($fh, json_encode($messages));

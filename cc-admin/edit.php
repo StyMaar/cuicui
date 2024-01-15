@@ -9,9 +9,10 @@ $messages = json_decode($string, true);
 $message = $messages[$id];
 if($message) {
 		echo "<article>";
-		if (array_key_exists ("image", $message)){
-			$url = $message['image'];
-			echo "<img src='$url' alt='Image manquante' />";
+		if (array_key_exists ("images", $message)){
+			foreach ($message['images'] as $url) {
+				echo "<img src='$url' alt='Image manquante' />";
+			}
 		}
 
 	  echo "<form method='post' action='do_edit.php' enctype='multipart/form-data'>";

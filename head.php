@@ -9,25 +9,20 @@
 	</head>
 
 	<script>
-		function previewFile() {
-			var preview = document.getElementById('preview');
-
-			if (!preview) {
+		function previewFiles() {
+			var previewDiv = document.getElementById('image-preview');
+			if (!previewDiv) {
 				return;
 			}
-
-			var file    = document.querySelector('input[type=file]').files[0];
-			var reader  = new FileReader();
-
-			reader.onloadend = function () {
-				preview.src = reader.result;
-				preview.style.display = "";
-			}
-
-			if (file) {
+			for(let file of document.querySelector('input[type=file]').files){
+				var reader  = new FileReader();
+				reader.onload = function (event) {
+					let preview = document.createElement("img");
+					preview.src = event.target.result;
+					preview.height = 200;
+					previewDiv.appendChild(preview);
+				}
 				reader.readAsDataURL(file);
-			} else {
-				preview.src = "";
 			}
 		}
 	</script>
