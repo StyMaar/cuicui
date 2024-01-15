@@ -45,6 +45,10 @@ if($message) {
 	echo "<p class='date'>";
 	echo date(DATE_RFC2822, $message['date']);
 	echo "</p>";
+
+	echo "<p><a href='cc-admin/delete.php?id=$id'>Delete this post</a></p>";
+	echo "<p><a href='cc-admin/edit.php?id=$id'>Edit this post</a></p>";
+
 	echo "</article>";
 } else {
 	echo "that item doesn't exist. id = $id";
