@@ -42,14 +42,19 @@ if (isset($_FILES['mesfichiers']))
 			$extension = "x-html";
 		}
 
-		$path = "images/$id-$i.$extension";
-		move_uploaded_file($file, "../$path");
-
+		$path = "$id-$i.$extension";
+		
 		if($extension == "jpeg" || $extension == "png"){
+			$path = "images/$path";
+			move_uploaded_file($file, "../$path");
 			$images[] = array("url" => $path, "name"=> $name);
 		}else if ($extension == "mp4"){
+			$path = "videos/$path";
+			move_uploaded_file($file, "../$path");
 			$videos[] = array("url" => $path, "name"=> $name);
 		}else{
+			$path = "miscs/$path";
+			move_uploaded_file($file, "../$path");
 			$misc[] = array("url" => $path, "name"=> $name);
 		}
 	}
