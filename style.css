@@ -8,11 +8,17 @@ padding:0 10px;
 }
 
 .date {
-  font-size: 12px
+  font-size: 12px;
+  margin-bottom: 0px;
 }
 
 article {
-  margin-bottom: 30px
+  margin-bottom: 30px;
+  border-bottom: solid 1px #AAA;
+}
+
+.message {
+  padding-left: 15px;
 }
 
 article img, article video {

@@ -97,7 +97,7 @@ foreach ($messages as $id => $message) {
 			}
 			echo "</ul>";
 		}
-		echo "<p>";
+		echo "<p class='message'>";
 		echo htmlspecialchars($message['content']);
 		echo "</p>";
 
