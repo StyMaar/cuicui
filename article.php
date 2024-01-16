@@ -39,7 +39,7 @@ if($message) {
 		echo "</ul>";
 	}
 	echo "<p>";
-	echo $message['content'];
+	echo htmlspecialchars($message['content']);
 	echo "</p>";
 
 	echo "<p class='date'>";

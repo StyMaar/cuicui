@@ -40,7 +40,7 @@ if($message) {
 		}
 
 	  echo "<form method='post' action='do_edit.php' enctype='multipart/form-data'>";
-	  $content = $message['content'];
+	  $content = htmlspecialchars($message['content']);
 	  echo "<textarea name='message' rows='8'>$content</textarea>";
 		echo "<input type='hidden' value='$id' name='id' />";
 		$date = date(DATE_RFC2822, $message['date']);
