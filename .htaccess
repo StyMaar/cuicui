@@ -1,8 +1,5 @@
 DirectoryIndex index.php
 
-AuthName "welcome !"
-AuthType Basic
-AuthUserFile "/home/stymaar/www/fanclub/.htpasswd"
-Require valid-user
-
 RewriteRule "^miscs/(.*)$" "miscs.php?file=$1"
+RewriteRule "^images/(.*)$" "images.php?file=$1"
+RewriteRule "^videos/(.*)$" "videos.php?file=$1"

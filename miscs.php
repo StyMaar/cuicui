@@ -1,5 +1,5 @@
 <?php
-
+include("check-auth.php");
 $requested_path = $_GET['file'];
 
 preg_match('/([a-z0-9]{13})-(\d)+(.+)/', "$requested_path", $matches);

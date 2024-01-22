@@ -1,4 +1,5 @@
 <?php 
+include("check-auth.php");
 $id = $_GET['id'];
 
 $string = file_get_contents("../content/messages.json");

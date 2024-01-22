@@ -1,4 +1,5 @@
 <?php
+include("check-auth.php");
 
 unlink('../content/messages.json.bckp');
 

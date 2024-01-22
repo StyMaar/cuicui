@@ -1,3 +1,7 @@
+<?php
+include("check-auth.php");
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
