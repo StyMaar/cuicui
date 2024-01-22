@@ -89,7 +89,7 @@ include("check-auth.php");
 			if (navigator.canShare){
 				for (let article of document.getElementsByTagName("article")){
 					let shareButton = document.createElement("button");
-					shareButton.innerHTML = "Share";
+					shareButton.innerHTML = "Partager";
 
 					article.insertBefore(shareButton, article.firstChild);
 
