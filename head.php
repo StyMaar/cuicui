@@ -53,6 +53,59 @@
 				}
 			}
 		}
+
+		// get a file from an image tag (warning: download the image again in the process)
+		async function FileFromImageTag(imageTag){
+			let response = await fetch(imageTag.src);
+			return new File([await response.arrayBuffer()], imageTag.title)
+		}
+
+		async function share(article){
+			let filesArray= [];
+
+			let date = article.getElementsByClassName("date")[0].innerText;
+			let message = article.getElementsByClassName("message")[0].innerText;
+
+			for(let imageTag of article.getElementsByTagName("img")){
+				filesArray.push(await FileFromImageTag(imageTag))
+			}
+
+			if (navigator.canShare && navigator.canShare({ files: filesArray })) {
+				await navigator.share({
+				files: filesArray,
+				title: date,
+				text: message,
+				})
+			} else {
+				console.log(`Your system doesn't support sharing files.`);
+			}
+		}
+
+		function insertShareButton(){
+			if (navigator.canShare){
+				for (let article of document.getElementsByTagName("article")){
+					let shareButton = document.createElement("button");
+					shareButton.innerHTML = "Share";
+
+					article.insertBefore(shareButton, article.firstChild);
+
+					shareButton.onclick = function(){
+						let article = shareButton.parentElement;
+						share(article)
+						.then(() => console.log('Share was successful.'))
+						.catch((error) => {
+							console.log('Sharing failed', error);
+							alert("sharing failed"+error);
+						});
+					};
+				}
+			}
+		}
+
+		window.onload = function(){
+			insertShareButton()
+		}
+
 	</script>
 
 	<body>
