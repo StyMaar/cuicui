@@ -22,4 +22,14 @@
         }
    }
 ?>
-<form method="post" action="auth.php"><input type="text" name="username" /><input type="password" name="password" /><input type="submit" value="Connection" /></form>
+<form method="post" action="auth.php">
+    <div>
+        <label for="login">Identifiant</label><input type="text" name="username" id="login"/>
+    </div>
+    <div>
+        <label for="login">Mot de passe</label><input type="password" name="password" id="mdp"/>
+    </div>
+    <div>
+        <input type="submit" value="Connection" />
+    </div>
+</form>
