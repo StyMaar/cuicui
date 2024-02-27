@@ -1,0 +1,38 @@
+{
+  "short_name": "Fanclub",
+  "name": "Partages de photos de Mael et Ewen pour le fanclub",
+  "icons": [
+    {
+      "src": "icone-512.jpg",
+      "type": "image/jpg",
+      "sizes": "512x512"
+    },
+    {
+      "src": "icone-192.jpg",
+      "type": "image/jpg",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/fanclub",
+  "background_color": "#3367D6",
+  "display": "minimal-ui",
+  "share_target": {
+    "action": "cc-admin/upload.php",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "text": "message",
+      "files": [
+        {
+          "name": "photos",
+          "accept": ["image/jpeg", ".jpg", ".jpeg", ".JPG", ".JPEG"]
+        },
+        {
+          "name": "videos",
+          "accept": ["video/mp4", "video/quicktime"]
+        }
+      ]
+    }
+  }
+
+}
