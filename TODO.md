@@ -18,4 +18,8 @@
     - https://developer.mozilla.org/fr/docs/Web/Progressive_web_apps/Tutorials/js13kGames/Installable_PWAs
     - https://chodounsky.com/2019/03/24/progressive-web-application-as-a-share-option-in-android/
 
+    => le partage de l'appli vers Signal, est implémenté, mais mal: au lieu de partager l'image ça partage un lien vers une image. En plus il n'est pas implémenté pour les vidéos.
+
 - notifications => Non, pas avant d'avoir ré-écrit tout le truc en Rust
+
+- ajout du support pour les fichiers audio.
