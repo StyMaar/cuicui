@@ -2,4 +2,18 @@ DirectoryIndex index.php
 
 RewriteRule "^miscs/(.*)$" "miscs.php?file=$1"
 RewriteRule "^images/(.*)$" "images.php?file=$1"
-RewriteRule "^videos/(.*)$" "videos.php?file=$1"
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    # Images
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+  
+    # Video
+    ExpiresByType video/mp4 "access plus 1 year"
+    ExpiresByType video/mpeg "access plus 1 year"
+</IfModule>
