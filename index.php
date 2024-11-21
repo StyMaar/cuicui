@@ -87,16 +87,16 @@ foreach ($messages as $id => $message) {
 				echo "</video>";
 			}
 		}
-		if (array_key_exists ("misc", $message)){
-			echo "<h3>Fichiers</h3>";
-			echo "<ul>";
-			foreach ($message['misc'] as $fichier) {
-				$url = $fichier["url"];
-				$name = $fichier["name"];
-				echo "<li><a href='$url'>$name</a></li>";
-			}
-			echo "</ul>";
-		}
+		// if (array_key_exists ("misc", $message)){
+		// 	echo "<h3>Fichiers</h3>";
+		// 	echo "<ul>";
+		// 	foreach ($message['misc'] as $fichier) {
+		// 		$url = $fichier["url"];
+		// 		$name = $fichier["name"];
+		// 		echo "<li><a href='$url'>$name</a></li>";
+		// 	}
+		// 	echo "</ul>";
+		// }
 		echo "<p class='message'>";
 		echo htmlspecialchars($message['content']);
 		echo "</p>";
